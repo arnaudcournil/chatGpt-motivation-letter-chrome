@@ -6,14 +6,7 @@
     "permissions": [
      "*://*/*",
      "activeTab",
-     "scripting",
-     "clipboardWrite"
-    ],
-    "content_scripts": [
-     {
-      "matches": ["*://*/*"],
-      "js": ["monscript.js"]
-     }
+     "scripting"
     ],
     "browser_action": {
 
