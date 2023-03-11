@@ -1,7 +1,6 @@
-var website = "none";
+var website = "";
 
 async function main() {
-  document.getElementById("offerTitle").innerHTML = "Pas sur un site d'annonces reconnu";
   website = await offreDetec();
   await show();
 }
@@ -14,11 +13,11 @@ async function offreDetec() {
   else if(result.includes("https://www.welcometothejungle.com/")){
     return "Welcome To The Jungle";
   }
-  return "none";
+  return "";
 }
 
 async function generate() {
-  var title = "none";
+  var title = "Pas sur un site d'annonces reconnu";
   var content = "<placer ici la lettre de motivation>";
   if(website == "Hello Work"){
     title = await execFunction("document.querySelector('h1.tw-flex').innerHTML.split('<')[0].trim()") + " - ";
@@ -42,11 +41,11 @@ async function show()
   document.getElementById("offerQuery").hidden = false;
 }
 
-async function execFunction(functionStr, functionR = () => {}) {
+async function execFunction(functionStr) {
   let result = undefined;
   chrome.tabs.executeScript( {
       "code": functionStr
-  }, results => {result = results;functionR(results)});
+  }, results => {result = results});
   while(result == undefined) await new Promise(r => setTimeout(r, 1));
   return result[0];
 }
