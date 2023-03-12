@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
-    "name": "Mon Extension",
-    "description": "Extension test Chrome",
+    "name": "ChatGPT - Lettre de motivation",
+    "description": "Try to generate a letter of motivation with ChatGPT",
     "version": "1.0",
     "permissions": [
      "*://*/*",
@@ -9,7 +9,12 @@
      "scripting"
     ],
     "browser_action": {
-
      "default_popup": "popup.html"
-    }
+    },
+    "content_scripts": [
+        {
+         "matches": ["https://chat.openai.com/*"],
+         "js": ["monscript.js"]
+        }
+       ]
 }
