@@ -2,10 +2,25 @@
 <link rel="stylesheet" href="popup.css" />
 <h1>ChatGpt Generator <br />Covering Letter</h1>
 <h2 id="offerTitle">none</h2>
+<div class = "right">
+  <input id = "reloadButton" type="button" value="🔄">
+  <input id = "addSelectionButton" type="button" value="➕">
+  <input id = "deleteButton" type="button" value="🗑️">
+  <label style="background-color: rgba(0,191,255);">abc</label>
+  <label class="switch">
+    <input id = "highlightSwitch" type="checkbox">
+    <span class="slider round"></span>
+  </label>
+  <img src="https://images.emojiterra.com/google/noto-emoji/unicode-15/color/svg/1f1ec-1f1e7.svg" alt="Google (Noto Color Emoji - Unicode 15.0)" width="20" height="20" style="position: relative; top: 5;">
+  <label class="switch">
+    <input id = "langSwitch" type="checkbox">
+    <span class="slider round"></span>
+  </label>
+</div>
 <textarea id="offerQuery" rows="10" cols="50" hidden></textarea>
 <br />
 <br />
-<a href="https://chat.openai.com/chat" target="_blank" id="chatLink"
+<a href="https://chat.openai.com/" target="_blank" id="chatLink"
   >Send to ChatGpt</a
 >
 <script src="popup.js"></script>
